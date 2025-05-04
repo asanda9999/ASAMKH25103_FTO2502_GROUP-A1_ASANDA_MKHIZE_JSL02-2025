@@ -24,7 +24,18 @@ function manageTasks() {
     }
 
   
-   
+    for (let taskNumber = 1; taskNumber <= 2; taskNumber++) {
+        tasks.push(getTaskDetails(taskNumber));
+    }
+
+
+    tasks.forEach(task => {
+        if (task.status === "done") {
+            console.log(` Title : "${task.title}" status: done`);
+        } else if (task.status === "todo" || task.status === "doing") {
+            console.log(` Title : "${task.title}" not completed, let's get to work!`);
+        }
+    });
 }
 
 
